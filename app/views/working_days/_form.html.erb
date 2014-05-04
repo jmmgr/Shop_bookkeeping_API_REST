@@ -1,0 +1,33 @@
+<%= form_for(@working_day) do |f| %>
+  <% if @working_day.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@working_day.errors.count, "error") %> prohibited this working_day from being saved:</h2>
+
+      <ul>
+      <% @working_day.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :day_date %><br>
+    <%= f.number_field :day_date %>
+  </div>
+  <div class="field">
+    <%= f.label :sale %><br>
+    <%= f.text_field :sale %>
+  </div>
+  <div class="field">
+    <%= f.label :cash %><br>
+    <%= f.text_field :cash %>
+  </div>
+  <div class="field">
+    <%= f.label :change %><br>
+    <%= f.text_field :change_coins %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

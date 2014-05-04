@@ -1,0 +1,77 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf190
+{\fonttbl\f0\fnil\fcharset0 Consolas;\f1\fnil\fcharset0 AndaleMono;}
+{\colortbl;\red255\green255\blue255;\red38\green38\blue38;\red38\green38\blue38;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sl360
+
+\f0\fs24 \cf2 \cb1 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f1 \cf0 \CocoaLigature0 rails generate scaffold provider name:string\
+\
+rails generate scaffold name_expense name:string\
+
+\f0 \CocoaLigature1 \
+
+\f1 \CocoaLigature0 rails generate scaffold payment amount:float provider:string state:boolean day:integer month:integer year:integer \
+\
+
+\f0 \CocoaLigature1 rails generate scaffold expense amount:float name_expense:string 
+\f1 \CocoaLigature0 day:integer month:integer year:integer \
+
+\f0 \CocoaLigature1 \
+
+\f1 \CocoaLigature0 rails generate scaffold working_day day:integer month:integer year:integer sale:float cash:float change:float
+\f0 \CocoaLigature1 \
+\
+********************************************************************************\
+\pard\pardeftab720\sl360
+\cf3 \cb1 Create Table proveedores\
+(\
+nombre varchar(30) NOT NULL,\
+PRIMARY KEY (nombre)\
+);\
+\
+Create Table tipoGastos\
+(\
+nombre varchar(30) NOT NULL,\
+PRIMARY KEY (nombre)\
+);\
+\
+\
+Create Table pagos\
+(\
+id_pago int NOT NULL AUTO_INCREMENT,\
+importe float(20) NOT NULL,\
+proveedor varchar(30) NOT NULL REFERENCES proveedor(nombre),\
+pendiente varchar(10),\
+dia int(2) REFERENCES fecha(dia),\
+mes int(2) REFERENCES fecha(mes),\
+anio int(4) REFERENCES fecha(anio),\
+PRIMARY KEY (id_pago)\
+);\
+\
+\
+Create Table gastos\
+(\
+id_gasto int NOT NULL AUTO_INCREMENT,\
+importe float(20) NOT NULL,\
+tipoGasto varchar(30) NOT NULL REFERENCES proveedor(nombre),\
+dia int(2) REFERENCES fecha(dia),\
+mes int(2) REFERENCES fecha(mes),\
+anio int(4) REFERENCES fecha(anio),\
+PRIMARY KEY (id_gasto)\
+);\
+\
+Create Table fechas\
+(\
+dia int(2),\
+mes int(2),\
+anio int(4),\
+venta int,\
+caja int,\
+cambio int,\
+PRIMARY KEY (dia,mes,anio)\
+\
+);}
