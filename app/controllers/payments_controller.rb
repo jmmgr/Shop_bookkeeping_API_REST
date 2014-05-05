@@ -93,11 +93,11 @@ class PaymentsController < ApplicationController
       params.require(:payment).permit(:amount, :provider, :state, :day_date)
     end
     
-    def authenticate
-      authenticate_or_request_with_http_basic do |name, password|
-       name=="prueba"&& password=="prueba"
-     end
+ #   def authenticate
+ #    authenticate_or_request_with_http_basic do |name, password|
+#       name=="prueba"&& password=="prueba"
+ #    end
       
-    end  
+ #   end  
  
 end

@@ -1,6 +1,6 @@
 class WorkingDaysController < ApplicationController
   before_action :set_working_day, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate
   # GET /working_days
   # GET /working_days.json
   def index

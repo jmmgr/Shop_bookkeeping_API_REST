@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140426041005) do
+ActiveRecord::Schema.define(version: 20140505061226) do
 
   create_table "expenses", force: true do |t|
     t.date     "day_date"
@@ -38,6 +38,15 @@ ActiveRecord::Schema.define(version: 20140426041005) do
 
   create_table "providers", force: true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "name"
+    t.string   "password"
+    t.string   "email"
+    t.string   "salt"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

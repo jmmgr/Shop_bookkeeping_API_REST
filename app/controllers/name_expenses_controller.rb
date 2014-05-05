@@ -1,5 +1,6 @@
 class NameExpensesController < ApplicationController
   before_action :set_name_expense, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate
 
   # GET /name_expenses
   # GET /name_expenses.json

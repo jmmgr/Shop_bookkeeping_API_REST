@@ -5,6 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.0'
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
+gem 'bcrypt', :require => 'bcrypt' 
 #try to use myslq
 gem 'mysql', '~> 2.9.1'
 # Use SCSS for stylesheets
